@@ -1,1 +1,2 @@
-# my-project
+#  job4j_di
+Мы разберем причину появления Spring.
