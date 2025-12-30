@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Context {
-    private Map<String, Object> els = new HashMap<String, Object>();
+    private final Map<String, Object> els = new HashMap<>();
 
     public void reg(Class cl) {
         Constructor[] constructors = cl.getDeclaredConstructors();
@@ -15,7 +15,7 @@ public class Context {
             throw new IllegalStateException("Class has multiple constructors : " + cl.getCanonicalName());
         }
         Constructor con = constructors[0];
-        List<Object> args = new ArrayList<Object>();
+        List<Object> args = new ArrayList<>();
         for (Class arg : con.getParameterTypes()) {
             if (!els.containsKey(arg.getCanonicalName())) {
                 throw new IllegalStateException("Object doesn't found in context : " + arg.getCanonicalName());
