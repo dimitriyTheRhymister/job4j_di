@@ -12,12 +12,10 @@ public class StartUI {
     @Autowired
     private ConsoleInput input;
 
-    // Метод для добавления имени (без запроса возраста)
     public void add(String value) {
         store.add(value);
     }
 
-    // Метод для добавления через консоль
     public void addViaConsole() {
         String name = input.askStr("Enter name: ");
         store.add("Name: " + name);
